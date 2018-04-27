@@ -45,5 +45,14 @@ alias cd..="cd .."
 alias vim="nvim"
 alias f="fuck"
 alias dotfiles="/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
+alias dc="docker-compose"
+alias c="code ."
 
 eval $(thefuck --alias)
+
+# paths
+
+PATH=/home/buttars/.yarn/bin:$PATH
+
+eval $(ssh-agent) &>/dev/null
+ssh-add ~/.ssh/mobl_rsa &>/dev/null

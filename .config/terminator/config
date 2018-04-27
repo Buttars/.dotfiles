@@ -5,7 +5,6 @@
   handle_size = 1
   inactive_color_offset = 0.79
   scroll_tabbar = True
-  suppress_multiple_term_dialog = True
   title_inactive_bg_color = "#000000"
   title_inactive_fg_color = "#f0f0f0"
   title_transmit_bg_color = "#000000"
@@ -44,12 +43,12 @@
 [layouts]
   [[default]]
     [[[child1]]]
-      profile = Molokai
       parent = window0
+      profile = Molokai
       type = Terminal
     [[[window0]]]
-      profile = Molokai
       parent = ""
+      profile = Molokai
       type = Window
   [[x2]]
     [[[child0]]]
@@ -138,14 +137,13 @@
 [plugins]
 [profiles]
   [[default]]
-    backspace_binding = automatic
-    cursor_color = "#ff0000"
-    delete_binding = automatic
-    foreground_color = "#f0f0f0"
-    palette = "#000000:#cc0000:#4e9a06:#c4a000:#3465a4:#75507b:#06989a:#d3d7cf:#555753:#ef2929:#8ae234:#fce94f:#729fcf:#ad7fa8:#34e2e2:#eeeeec"
+    background_color = "#121212"
+    cursor_color = "#bbbbbb"
+    font = Misc Termsyn 10
+    foreground_color = "#bbbbbb"
+    palette = "#121212:#fa2573:#98e123:#dfd460:#1080d0:#8700ff:#43a8d0:#bbbbbb:#555555:#f6669d:#b1e05f:#fff26d:#00afff:#af87ff:#51ceff:#ffffff"
     scrollback_infinite = True
     scrollbar_position = hidden
-    show_titlebar = False
   [[AdventureTime]]
     background_color = "#1f1d45"
     cursor_color = "#efbf38"
