@@ -38,11 +38,17 @@ fi
 [[ $- != *i* ]] && return
 [[ -z "$TMUX" ]] && exec tmux -u
 
+# Xresources
+[[ -f ~/.Xresources ]] && xrdb -merge -I$HOME ~/.Xresources
+
+BROWSER="google-chrome-stable"
+
 # Aliases
 alias pacman="sudo pacman"
 alias systemctl="sudo systemctl"
 alias cd..="cd .."
 alias vim="nvim"
+alias v="vim"
 alias f="fuck"
 alias dotfiles="/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
 alias dc="docker-compose"
@@ -50,9 +56,9 @@ alias c="code ."
 
 eval $(thefuck --alias)
 
-# paths
-
-PATH=/home/buttars/.yarn/bin:$PATH
+# Paths
+PATH=~/.yarn/bin:$PATH
 
 eval $(ssh-agent) &>/dev/null
 ssh-add ~/.ssh/mobl_rsa &>/dev/null
+
