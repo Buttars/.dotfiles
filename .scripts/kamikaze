@@ -1,0 +1,19 @@
+#!/bin/bash
+
+if [ -z "$1" ];
+then
+  echo "Requires one paramater, a port number, and kills all applications using it."
+else
+  command=$(lsof -t -i:$1)
+  echo $command
+  if [ -n "$command" ];
+  then
+    $(kill $command)
+    echo "Killed all applications running on $1."
+  else
+    echo "No applications running on port: $1."
+  fi
+fi
+
+
+

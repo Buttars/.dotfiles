@@ -58,6 +58,7 @@ eval $(thefuck --alias)
 
 # Paths
 PATH=~/.yarn/bin:$PATH
+PATH=~/.local/bin:$PATH
 
 eval $(ssh-agent) &>/dev/null
 ssh-add ~/.ssh/mobl_rsa &>/dev/null
