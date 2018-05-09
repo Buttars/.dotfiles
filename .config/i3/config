@@ -81,7 +81,7 @@ bindsym $mod+Shift+q		kill
 bindsym $mod+w			exec $term -e sudo wifi-menu
 bindsym $mod+Shift+w		exec --no-startup-id $BROWSER
 
-#bindsym $mod+e			exec $term -e neomutt
+#bindsym $mod+e			
 ##bindsym $mod+Shift+e
 
 bindsym $mod+r 			exec $term -e ranger
@@ -103,10 +103,10 @@ bindsym $mod+o			sticky toggle
 bindsym $mod+Shift+o		resize grow width 10 px or 10 ppt
 
 bindsym $mod+p			exec $pause
-bindsym $mod+Shift+p		exec mypaint
+#bindsym $mod+Shift+p		
 
 bindsym $mod+a			[instance="math"] scratchpad show; [instance="math"] move position center
-#bindsym $mod+Shift+a		exec $term -e ncpamixer
+#bindsym $mod+Shift+a		
 
 bindsym $mod+s			gaps inner current plus 5
 bindsym $mod+Shift+s		gaps inner current minus 5
@@ -136,19 +136,19 @@ bindsym $mod+z			gaps outer current plus 5
 bindsym $mod+Shift+z		gaps outer current minus 5
 
 bindsym $mod+x			exec $truemute ;; exec --no-startup-id ~/.config/i3/lock.sh
-#bindsym $mod+Shift+x		exec prompt "Are you sure you want to shutdown?" "$shutdown"
-bindsym $mod+Shift+x		exec shutdown now
+bindsym $mod+Shift+x		exec prompt "Are you sure you want to shutdown?" "$shutdown"
+#bindsym $mod+Shift+x		exec shutdown now
 
 bindsym $mod+c			exec --no-startup-id camtoggle
 ##bindsym $mod+Shift+c
 
-#bindsym $mod+v			exec $term -e ncmpcpp -s visualizer
-bindsym $mod+Shift+v		exec projectM-pulseaudio
+#bindsym $mod+v			
+#bindsym $mod+Shift+v		
 
 bindsym $mod+b			bar mode toggle
 bindsym $mod+Shift+b		floating toggle; sticky toggle; exec --no-startup-id bottomleft
 
-bindsym $mod+n			exec $term -e newsboat
+#bindsym $mod+n			
 ##bindsym $mod+Shift+n
 
 bindsym $mod+m 			exec $music
@@ -376,7 +376,7 @@ bindsym XF86KbdBrightnessUp	exec --no-startup-id python3.6 ~/.i3/kb-lights.py +
 ##bindsym XF86MailForward	exec
 ##bindsym XF86Save		exec
 bindsym XF86Documents		exec $term -e ranger ~/Documents
-##bindsym XF86Battery		exec
+##bindsym XF86Battery		exec#
 ##bindsym XF86Bluetooth		exec
 bindsym XF86WLAN		exec $netrefresh
 

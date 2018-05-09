@@ -4,6 +4,8 @@ ZSH=/usr/share/oh-my-zsh/
 
 ZSH_THEME="bullet-train"
 
+export BROWSER="google-chrome-stable"
+
 # Compilation flags
 export ARCHFLAGS="-arch x86_64"
 
@@ -59,6 +61,7 @@ eval $(thefuck --alias)
 # Paths
 PATH=~/.yarn/bin:$PATH
 PATH=~/.local/bin:$PATH
+PATH=~/.scripts:$PATH
 
 eval $(ssh-agent) &>/dev/null
 ssh-add ~/.ssh/mobl_rsa &>/dev/null
