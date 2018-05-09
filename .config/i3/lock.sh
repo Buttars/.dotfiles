@@ -9,10 +9,6 @@ convert /tmp/screen.png -paint 1 -filter Gaussian -blur 0x8 /tmp/screen.png
 # Add the lock to the blurred image:
 [[ -f ~/.config/i3/lock.png ]] && convert /tmp/screen.png  ~/.config/i3/lock.png -gravity center -composite -matte /tmp/screen.png
 
-# Pause music (mocp and mpd):
-mocp -P
-mpc pause
-
 # Lock it up!
 i3lock -e -f -c 000000 -i /tmp/screen.png
 
