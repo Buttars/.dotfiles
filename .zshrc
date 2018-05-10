@@ -1,68 +1,32 @@
-export ZSH=/home/buttars/.oh-my-zsh
+# ____        _   _                   _________  _   _ ____   ____ 
+#| __ ) _   _| |_| |_ __ _ _ __ ___  |__  / ___|| | | |  _ \ / ___|
+#|  _ \| | | | __| __/ _` | '__/ __|   / /\___ \| |_| | |_) | |    
+#| |_) | |_| | |_| || (_| | |  \__ \  / /_ ___) |  _  |  _ <| |___ 
+#|____/ \__,_|\__|\__\__,_|_|  |___/ /____|____/|_| |_|_| \_\\____|
 
+# All of our zsh files
+export ZSH=/home/buttars/.oh-my-zsh
 ZSH=/usr/share/oh-my-zsh/
 
-ZSH_THEME="bullet-train"
+typeset -U config_files
+config_files=(~/.zsh/*.zsh)
 
-export BROWSER="google-chrome-stable"
+# Load the path files
+for file in ${(M)config_files:#*/path.zsh}
+do
+  source $file
+done
 
-# Compilation flags
-export ARCHFLAGS="-arch x86_64"
+# Load the prompt file
+for file in ${(M)config_files:#*/prompt.zsh}
+do
+  source $file
+done
 
-export LANG=en_US.UTF-8
-export LC_CTYPE=en_US.UTF-8
+# Load everything but the path, prompt, and completion files
+for file in ${${${config_files:#*/path.zsh}:#*/completion.zsh}:#*/prompt.zsh}
+do
+  source $file
+done
 
-# ssh
-export SSH_KEY_PATH="~/.ssh/rsa_id"
-
-source $ZSH/oh-my-zsh.sh
-
-plugins=(
-  git
-  adb
-  archlinux
-  gitignore
-)
-
-BULLETTRAIN_PROMPT_ORDER=(
-  time
-  dir
-  git
-  status
-)
-
-ZSH_CACHE_DIR=$HOME/.cache/oh-my-zsh
-if [[ ! -d $ZSH_CACHE_DIR ]]; then
-  mkdir $ZSH_CACHE_DIR
-fi
-
-# If not running interactively, do not do anything
-[[ $- != *i* ]] && return
-[[ -z "$TMUX" ]] && exec tmux -u
-
-# Xresources
-[[ -f ~/.Xresources ]] && xrdb -merge -I$HOME ~/.Xresources
-
-BROWSER="google-chrome-stable"
-
-# Aliases
-alias pacman="sudo pacman"
-alias systemctl="sudo systemctl"
-alias cd..="cd .."
-alias vim="nvim"
-alias v="vim"
-alias f="fuck"
-alias dotfiles="/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
-alias dc="docker-compose"
-alias c="code ."
-
-eval $(thefuck --alias)
-
-# Paths
-PATH=~/.yarn/bin:$PATH
-PATH=~/.local/bin:$PATH
-PATH=~/.scripts:$PATH
-
-eval $(ssh-agent) &>/dev/null
-ssh-add ~/.ssh/mobl_rsa &>/dev/null
-
+unset config_files
