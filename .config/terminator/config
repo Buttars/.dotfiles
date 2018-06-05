@@ -16,6 +16,8 @@
   close_term = <Primary><Shift>w
   close_window = <Primary><Shift>q
   edit_window_title = None
+  go_down = Super_L
+  go_left = Super_L
   group_all = None
   group_all_toggle = <Alt>g
   group_tab = None
@@ -29,13 +31,15 @@
   new_terminator = <Primary><Shift>n
   next_profile = <Alt>p
   next_tab = None
+  page_up = <Primary><Shift>k
+  page_up_half = <Primary><Shift>j
   prev_tab = None
   reset = None
   reset_clear = None
-  resize_down = None
+  resize_down = <Primary><Shift>j
   resize_left = None
   resize_right = None
-  resize_up = None
+  resize_up = <Primary><Shift>k
   rotate_ccw = None
   rotate_cw = None
   scaled_zoom = None
@@ -140,7 +144,7 @@
   [[default]]
     background_color = "#121212"
     cursor_color = "#bbbbbb"
-    font = Misc Termsyn 10
+    font = Sans 10
     foreground_color = "#bbbbbb"
     palette = "#121212:#fa2573:#98e123:#dfd460:#1080d0:#8700ff:#43a8d0:#bbbbbb:#555555:#f6669d:#b1e05f:#fff26d:#00afff:#af87ff:#51ceff:#ffffff"
     scrollback_infinite = True

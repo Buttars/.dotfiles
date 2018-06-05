@@ -14,6 +14,7 @@ alias newnet="sudo systemctl restart NetworkManager" # Refresh wifi
 alias nf="clear && neofetch" # Le Redditfetch
 
 # Some aliases
+alias pacman="sudo pacman"
 alias p="sudo pacman"
 alias SS="sudo systemctl"
 alias vim="nvim"

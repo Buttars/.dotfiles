@@ -6,7 +6,7 @@ export ARCHFLAGS="-arch x86_64"
 export LANG=en_US.UTF-8
 export LC_CTYPE=en_US.UTF-8
 
-eval $(thefuck --alias --enable-experimental-instant-mode)
+#eval $(thefuck --alias --enable-experimental-instant-mode)
 
 
 ZSH_CACHE_DIR=$HOME/.cache/oh-my-zsh
@@ -15,8 +15,8 @@ if [[ ! -d $ZSH_CACHE_DIR ]]; then
 fi
 
 # If not running interactively, do not do anything
-[[ $- != *i* ]] && return
-[[ -z "$TMUX" ]] && exec tmux -u
+#[[ $- != *i* ]] && return
+#[[ -z "$TMUX" ]] && exec tmux -u
 
 # Xresources
 [[ -f ~/.Xresources ]] && xrdb -merge -I$HOME ~/.Xresources
