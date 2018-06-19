@@ -5,6 +5,7 @@ plugins=(
   adb
   archlinux
   gitignore
+  vundle
 )
 
 BULLETTRAIN_PROMPT_ORDER=(
