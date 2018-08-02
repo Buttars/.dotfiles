@@ -3,7 +3,6 @@
 # E.g., put `export BROWSER="firefox"` into your bash_profile
 
 # #---Basic Definitions---# #
-# 
 
 #Needed for i3-gaps
 for_window [class="^.*"] border pixel 3
@@ -11,13 +10,11 @@ gaps inner 15
 gaps outer 15
 font pango:mono 12
 set $mod Mod1
+set $altmod Mod4
 set $term --no-startup-id terminator
 set $stoprec --no-startup-id killall ffmpeg
 
-# 
-
 # #---Starting External Scripts---# #
-# 
 
 #Setting the background:
 exec_always --no-startup-id feh --bg-scale ~/.config/wall.png
@@ -26,15 +23,17 @@ exec --no-startup-id dunst
 #Torrent daemon:
 exec --no-startup-id transmission-daemon
 #Composite manager:
-exec --no-startup-id compton --xrender-sync-fence
+exec --no-startup-id compton --xrender-sync-fence --config ~/.config/compton.conf -b
 #Launch Polybar where appropriate:
-exec_always --no-startup-id ~/.scripts/polybar_launch
+#exec_always --no-startup-id ~/.scripts/polybar_launch
 #Runs the key remapping scripts
 exec --no-startup-id ~/.scripts/remaps
 #Unclutter makes the mouse invisible after a brief period
 exec --no-startup-id unclutter
 #Network Manager applet
 exec --no-startup-id nm-applet
+#Enable numlock
+exec --no-startup-id numlockx on
 
 #SYSTEMD
 set $shutdown sudo shutdown now
@@ -45,7 +44,6 @@ set $hibernate sudo systemctl hibernate
 
 
 # #---Audio and Music Definitions---# #
-
 
 #FOR ALSA/AMIXER
 #set $inc --no-startup-id amixer sset Master 2%+
@@ -82,7 +80,7 @@ bindsym $mod+Shift+BackSpace	exec prompt "Are you sure you want to reboot?" "$re
 ##bindsym $mod+grave
 ##bindsym $mod+asciitilde
 
-#STOP/HIDE EVERYTHING:
+#STOP/HIDE EVERYTHING
 bindsym $mod+Shift+Delete	exec $truemute ; exec $truepause ; workspace lmao ; exec $term -e htop ; exec $term -e ranger
 
 
@@ -127,6 +125,9 @@ bindsym $mod+Shift+s		gaps inner current minus 5
 bindsym $mod+d			exec --no-startup-id rofi -show drun
 bindsym $mod+Shift+d		gaps inner current set 0; gaps outer current set 0
 
+bindcode 133			exec --no-startup-id xfce4-popup-whiskermenu
+
+
 bindsym $mod+f			fullscreen toggle
 ##bindsym $mod+Shift+f
 
@@ -166,7 +167,6 @@ bindsym $mod+Shift+b		floating toggle; sticky toggle; exec --no-startup-id botto
 
 bindsym $mod+m 			exec $music
 bindsym $mod+Shift+m		exec $mute
-
 
 # #---Workspace Bindings---# #
 
@@ -267,7 +267,35 @@ no_focus [title="mpvfloat"]
 
 for_window [title="Default - Wine desktop"] floating enable
 
+for_window [title="Etcher"] floating enable
+for_window [title="Etcher"] sticky enable
 
+# Set color variables
+# optional theme colorscheme
+set $grey                #334455
+set $magenta             #ddbbcc
+set $blue                #557788
+set $cyan                #22ddcc
+set $black               #334455
+set $white               #aacccc
+set $yellow              #dd9933
+set $red                 #aa5566
+set $green               #779988
+
+# Theme colors
+set $bg-color 	         #334455
+set $inactive-bg-color   #334455
+set $text-color          #aacccc
+set $inactive-text-color #557788
+set $urgent-bg-color     #ee3355
+
+# Set window colors
+# class                 border              background         text                 indicator
+client.focused          $bg-color           $bg-color          $white               $bg-color
+client.unfocused        $inactive-bg-color  $inactive-bg-color $inactive-text-color $bg-color
+client.focused_inactive $inactive-bg-color  $inactive-bg-color $inactive-text-color $bg-color
+client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color          $bg-color
+client.background       $bg-color
 
 # #---Function Buttons---# #
 

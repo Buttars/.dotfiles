@@ -144,11 +144,10 @@
   [[default]]
     background_color = "#121212"
     cursor_color = "#bbbbbb"
-    font = Sans 10
+    font = Satisfy 10
     foreground_color = "#bbbbbb"
     palette = "#121212:#fa2573:#98e123:#dfd460:#1080d0:#8700ff:#43a8d0:#bbbbbb:#555555:#f6669d:#b1e05f:#fff26d:#00afff:#af87ff:#51ceff:#ffffff"
     scrollback_infinite = True
-    scrollbar_position = hidden
   [[AdventureTime]]
     background_color = "#1f1d45"
     cursor_color = "#efbf38"

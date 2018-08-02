@@ -35,7 +35,7 @@ alias f="fuck"
 alias dotfiles="/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
 alias dc="docker-compose"
 alias c="code ."
-
+alias google-chrome-stable="google-chrome-stable --remote-debugging-port=9222"
 
 # Adding color
 alias ls='ls -hN --color=auto --group-directories-first'

@@ -6,6 +6,8 @@ export ARCHFLAGS="-arch x86_64"
 export LANG=en_US.UTF-8
 export LC_CTYPE=en_US.UTF-8
 
+export GOPATH=$HOME/.go
+
 eval $(thefuck --alias)
 
 # Vim keybindings in terminal
@@ -17,8 +19,8 @@ if [[ ! -d $ZSH_CACHE_DIR ]]; then
 fi
 
 # If not running interactively, do not do anything
-[[ $- != *i* ]] && return
-[[ -z "$TMUX" ]] && exec tmux -u
+#[[ $- != *i* ]] && return
+#[[ -z "$TMUX" ]] && exec tmux -u
 
 # Xresources
 [[ -f ~/.Xresources ]] && xrdb -merge -I$HOME ~/.Xresources
