@@ -143,6 +143,8 @@
 [profiles]
   [[default]]
     background_color = "#121212"
+    background_darkness = 1.0
+    background_type = transparent
     cursor_color = "#bbbbbb"
     font = Satisfy 10
     foreground_color = "#bbbbbb"
