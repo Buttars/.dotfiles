@@ -16,7 +16,7 @@ floating_modifier $mod
 # #---Starting External Scripts---# #
 
 #Setting the background:
-exec_always --no-startup-id feh --bg-scale ~/Pictures/Wallpapers/download &
+exec_always --no-startup-id feh --bg-scale ~/Pictures/Wallpapers/harambe.jpg --bg-scale ~/Pictures/Wallpapers/download.jpg &
 #Starts dunst for notifications:
 exec --no-startup-id dunst
 #Torrent daemon:
