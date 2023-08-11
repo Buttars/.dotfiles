@@ -22,7 +22,7 @@ M.general = {
       function()
         require("spectre").open_file_search { select_word = true }
       end,
-      "Search current file"
+      "Search current file",
     },
 
     ["<C-h>"] = { "<cmd> TmuxNavigateLeft<CR>", "window left" },
@@ -37,11 +37,13 @@ M.general = {
     ["<leader>="] = { ":resize +10 <CR>" },
     ["<leader>-"] = { ":resize -10 <CR>" },
 
+    ["<leader>."] = { "<cmd> CodeActionMenu<CR>" }
   },
 
   c = {
-    ["Q"] = { ":qa", opts = { noremap = true } }
-  }
+    ["Q"] = { "qa", opts = { noremap = true } },
+    ["W"] = { "w !sudo -S tee %" , opts = { noremap = true } }
+  },
 }
 
 return M

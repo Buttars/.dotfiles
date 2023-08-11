@@ -5,7 +5,20 @@ local plugins = {
   -- Override plugin definition options
   {
     "christoomey/vim-tmux-navigator",
-    lazy = false
+    lazy = false,
+  },
+  {
+    "weilbith/nvim-code-action-menu",
+    lazy = false,
+  },
+  {
+    "kosayoda/nvim-lightbulb",
+    lazy = false,
+    config = function()
+      require("nvim-lightbulb").setup({
+        autocmd = { enabled = true }
+      })
+    end
   },
   {
     "neovim/nvim-lspconfig",
