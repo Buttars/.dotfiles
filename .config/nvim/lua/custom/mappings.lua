@@ -30,19 +30,26 @@ M.general = {
     ["<C-j>"] = { "<cmd> TmuxNavigateDown<CR>", "window down" },
     ["<C-k>"] = { "<cmd> TmuxNavigateUp<CR>", "window up" },
 
-    -- Reload config
-    -- Doesn't work...
-    -- ["<leader>sv"] = { "<cmd> source $HOME/.config/nvim/init.lua <CR>", "Source nvim config"}
-    --
-    ["<leader>="] = { ":resize +10 <CR>" },
-    ["<leader>-"] = { ":resize -10 <CR>" },
+    ["<leader>="] = { ":resize +5 <CR>" },
+    ["<leader>-"] = { ":resize -5 <CR>" },
 
-    ["<leader>."] = { "<cmd> CodeActionMenu<CR>" }
+    ["<leader>."] = { "<cmd> CodeActionMenu<CR>" },
+    ["<leader>td"] = {
+      function()
+        if vim.g.diagnostics_visible then
+          vim.g.diagnostics_visible = false
+          vim.diagnostic.disable()
+        else
+          vim.g.diagnostics_visible = true
+          vim.diagnostic.enable()
+        end
+      end,
+    },
   },
 
   c = {
     ["Q"] = { "qa", opts = { noremap = true } },
-    ["W"] = { "w !sudo -S tee %" , opts = { noremap = true } }
+    ["W"] = { "w !sudo -S tee %<CR>", opts = { noremap = true } },
   },
 }
 

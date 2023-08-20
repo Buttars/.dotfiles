@@ -7,10 +7,29 @@ end
 local b = null_ls.builtins
 
 local sources = {
+  b.formatting.prettierd.with {
+    filetypes = {
+      "javascript",
+      "typescript",
+      "css",
+      "scss",
+      "html",
+      "json",
+      "yaml",
+      "markdown",
+      "graphql",
+      "md",
+      "txt",
+      "code-snippets",
+    },
+  },
 
-  -- webdev stuff
-  b.formatting.deno_fmt, -- choosed deno for ts/js files cuz its very fast!
-  b.formatting.prettier.with { filetypes = { "html", "markdown", "css", "ts" } }, -- so prettier works only on these filetypes
+  b.diagnostics.cspell.with {
+    extra_args = {
+      "--config",  "~/.config/nvim/lua/custom/configs/cspell.json",
+    },
+  },
+  b.code_actions.cspell,
 
   -- Lua
   b.formatting.stylua,

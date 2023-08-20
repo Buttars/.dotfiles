@@ -3,10 +3,6 @@
 # Runs on login
 # Stores environment variable
 
-# Setup nvm
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
 # Setup homebrew
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
@@ -14,7 +10,7 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 eval $(thefuck --alias)
 
 # Adds `~/.local/bin` to $PATH
-export PATH="$PATH:${$(gfind ~/.local/bin -type d -printf %p:)%%:}"
+export PATH="$PATH:${$(find ~/.local/bin -type d -printf %p:)%%:}"
 export PATH="$PATH:$(yarn global bin)"
 
 # Source tmux bins
@@ -28,7 +24,7 @@ source <(ng completion script)
 export EDITOR="nvim"
 # export TERMINAL="st"
 # export TERMINAL_PROG="st"
-export BROWSER="google-chrome"
+export BROWSER="firefox"
 
 # Home directory clean up
 export XDG_CONFIG_HOME="$HOME/.config"
@@ -37,11 +33,19 @@ export XDG_CACHE_HOME="$HOME/.cache"
 export INPUTRC="$XDG_CONFIG_HOME/shell/inputrc"
 export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
 export NVM_DIR="$HOME/.local/bin/nvm"
+export XINITRC="$XDG_CONFIG_HOME/x11/xinitrc"
 
 [ ! -f ${XDG_CONFIG_HOME:-$HOME/.config}/shell/shortcutrc ] && setsid shortcuts >/dev/null 2>&1
+
+
+# Setup nvm
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
 
 # Start graphical server on user's current tty if not already running.
 [ "$(tty)" = "/dev/tty1" ] && ! pidof -s Xorg >/dev/null 2>&1 && exec startx "$XINITRC"
 
 # if [ "$TMUX" = "" ]; then tmux; fi
 # if [ -z "$TMUX" ]; then tmux attach -t TMUX || tmux new -s TMUX; fi
+# [ -x "$(command -v xinit)" ] &&  [ "$(tty)" = "/dev/tty1" ] & ! pidof -s Xorg >/dev/null 2>&1 && exec startx $XINITRC"

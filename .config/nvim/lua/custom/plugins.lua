@@ -15,10 +15,10 @@ local plugins = {
     "kosayoda/nvim-lightbulb",
     lazy = false,
     config = function()
-      require("nvim-lightbulb").setup({
-        autocmd = { enabled = true }
-      })
-    end
+      require("nvim-lightbulb").setup {
+        autocmd = { enabled = true },
+      }
+    end,
   },
   {
     "neovim/nvim-lspconfig",
@@ -66,22 +66,32 @@ local plugins = {
     "nvim-lua/plenary.nvim",
   },
   {
-    "nvim-lua/plenary.nvim",
-  },
-  {
     "nvim-pack/nvim-spectre",
   },
   {
     "kylechui/nvim-surround",
-    version = "*", -- Use for stability; omit to use `main` branch for the latest features
+    version = "*",
     event = "VeryLazy",
     config = function()
-      require("nvim-surround").setup {
-        -- Configuration here, or leave empty to use defaults
-      }
+      require("nvim-surround").setup {}
     end,
   },
-
+  {
+    "lervag/vimtex",
+    lazy = false
+  },
+  {
+    "hrsh7th/nvim-cmp",
+    options = overrides.cmp,
+    dependencies = {
+      "L3MON4D3/LuaSnip",
+      config = function(_, opts)
+        require("plugins.configs.others").luasnip(opts)
+        require("luasnip.loaders.from_vscode").lazy_load()
+        require("luasnip.loaders.from_vscode").load_standalone { path = "~/.config/nvim/lua/custom/snippets/buttars.code-snippets" }
+      end,
+    },
+  },
   -- To make a plugin not be loaded
   -- {
   --   "NvChad/nvim-colorizer.lua",
