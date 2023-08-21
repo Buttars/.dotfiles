@@ -1,7 +1,8 @@
 {
   "version": "0.2",
   "language": "en",
-  "words": ["buttars"],
+  "words": ["buttars","Buttars", "nvim", "Interquartile"],
   "flagWords": ["hte"],
-  "dictionaries": ["latix"],
+  "dictionaries": ["latex"],
+  "words": ["subsubsection"]
 }

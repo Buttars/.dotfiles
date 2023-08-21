@@ -78,18 +78,22 @@ local plugins = {
   },
   {
     "lervag/vimtex",
-    lazy = false
+    lazy = false,
   },
   {
     "hrsh7th/nvim-cmp",
     options = overrides.cmp,
     dependencies = {
-      "L3MON4D3/LuaSnip",
-      config = function(_, opts)
-        require("plugins.configs.others").luasnip(opts)
-        require("luasnip.loaders.from_vscode").lazy_load()
-        require("luasnip.loaders.from_vscode").load_standalone { path = "~/.config/nvim/lua/custom/snippets/buttars.code-snippets" }
-      end,
+      {
+        "L3MON4D3/LuaSnip",
+        config = function(_, opts)
+          require("plugins.configs.others").luasnip(opts)
+          require("luasnip.loaders.from_vscode").lazy_load()
+          require("luasnip.loaders.from_vscode").load_standalone {
+            path = "~/.config/nvim/lua/custom/snippets/buttars.code-snippets",
+          }
+        end,
+      },
     },
   },
   -- To make a plugin not be loaded

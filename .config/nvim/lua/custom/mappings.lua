@@ -30,10 +30,14 @@ M.general = {
     ["<C-j>"] = { "<cmd> TmuxNavigateDown<CR>", "window down" },
     ["<C-k>"] = { "<cmd> TmuxNavigateUp<CR>", "window up" },
 
-    ["<leader>="] = { ":resize +5 <CR>" },
-    ["<leader>-"] = { ":resize -5 <CR>" },
+    ["<leader>="] = { ":resize +5 <CR>", "increase window size" },
+    ["<leader>-"] = { ":resize -5 <CR>", "decrease window size" },
+    ["="] = { ":resize +5 <CR>", opts = { noremap = true } },
+    ["-"] = { ":resize -5 <CR>", opts = { noremap = true } },
+    ["+"] = { ":vertical resize +5 <CR>", opts = { noremap = true } },
+    ["_"] = { ":vertical resize -5 <CR>", opts = { noremap = true } },
 
-    ["<leader>."] = { "<cmd> CodeActionMenu<CR>" },
+    ["<leader>."] = { "<cmd> CodeActionMenu<CR>", "open code action menu" },
     ["<leader>td"] = {
       function()
         if vim.g.diagnostics_visible then
@@ -44,6 +48,7 @@ M.general = {
           vim.diagnostic.enable()
         end
       end,
+      "toggle code diagnostics",
     },
   },
 

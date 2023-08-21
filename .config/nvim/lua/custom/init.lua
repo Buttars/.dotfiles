@@ -15,6 +15,6 @@
 vim.wo.wrap = false
 vim.wo.linebreak = false
 vim.opt.relativenumber = true
-vim.g.diagnostics_visible = false
+vim.g.diagnostics_visible = true
 vim.diagnostic.disable()
 

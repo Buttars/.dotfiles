@@ -26,7 +26,8 @@ local sources = {
 
   b.diagnostics.cspell.with {
     extra_args = {
-      "--config",  "~/.config/nvim/lua/custom/configs/cspell.json",
+      "--config",
+      "~/.config/nvim/lua/custom/configs/cspell.json",
     },
   },
   b.code_actions.cspell,
