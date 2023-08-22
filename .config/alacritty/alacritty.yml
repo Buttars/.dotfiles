@@ -1,46 +1,30 @@
 colors:
+  # Default colors
   primary:
-    background: "#0E1018"
-    foreground: "#ebdbb2"
+    background: '#101317'
+    foreground: '#d4d4d5'
 
+  # Normal colors
   normal:
-    black: "#282828"
-    red: "#cc241d"
-    green: "#98971a"
-    yellow: "#d79921"
-    blue: "#458588"
-    magenta: "#b16286"
-    cyan: "#689d6a"
-    white: "#dfaf87"
+    black:   '#101317'
+    red:     '#f87070'
+    green:   '#37d99e'
+    yellow:  '#ffe59e'
+    blue:    '#53AAE5'
+    magenta: '#c397d8'
+    cyan:    '#50cad2'
+    white:   '#d4d4d5'
 
+  # Bright colors
   bright:
-    black: "#928374"
-    red: "#fb4934"
-    green: "#b8bb26"
-    yellow: "#fabd2f"
-    blue: "#83a598"
-    magenta: "#d3869b"
-    cyan: "#8ec07c"
-    white: "#ebdbb2"
-
-# draw_bold_text_with_bright_colors: true
-# Some other nice colors
-# let s:gui00 = "#304357" " ANSI Black
-# let s:gui01 = "#af8787" " ANSI Red
-# let s:gui02 = "#dfaf87" " ANSI Green
-# let s:gui03 = "#878787" " ANSI Yellow
-# let s:gui04 = "#af5f5f" " ANSI Blue
-# let s:gui05 = "#875f5f" " ANSI Magenta
-# let s:gui06 = "#87afaf" " ANSI Cyan
-# let s:gui07 = "#ffdf87" " ANSI White
-# let s:gui08 = "#10151a"
-# let s:gui09 = "#af1600"
-# let s:gui0A = "#af875f"
-# let s:gui0B = "#878787"
-# let s:gui0C = "#af5f00"
-# let s:gui0D = "#5f5f87"
-# let s:gui0E = "#afd7d7"
-# let s:gui0F = "#dfdfaf"
+    black:   '#191d22'
+    red:     '#ff8e8e'
+    green:   '#79dcaa'
+    yellow:  '#ffeda6'
+    blue:    '#87bdec'
+    magenta: '#b68acb'
+    cyan:    '#63b3ad'
+    white:   '#d4d4d5'
 
 font:
   # size: 8.75

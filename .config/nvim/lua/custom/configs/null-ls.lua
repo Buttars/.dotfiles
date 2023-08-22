@@ -8,21 +8,26 @@ local b = null_ls.builtins
 
 local sources = {
   b.formatting.prettierd.with {
-    filetypes = {
-      "javascript",
-      "typescript",
-      "css",
-      "scss",
-      "html",
-      "json",
-      "yaml",
-      "markdown",
-      "graphql",
-      "md",
-      "txt",
-      "code-snippets",
-    },
+    -- filetypes = {
+    --   "javascript",
+    --   "typescript",
+    --   "css",
+    --   "scss",
+    --   "html",
+    --   "json",
+    --   "yaml",
+    --   "markdown",
+    --   "graphql",
+    --   "md",
+    --   "txt",
+    --   "code-snippets",
+    -- },
   },
+
+  b.code_actions.eslint_d,
+  b.formatting.eslint_d,
+  b.diagnostics.eslint_d,
+
 
   b.diagnostics.cspell.with {
     extra_args = {
@@ -43,3 +48,4 @@ null_ls.setup {
   debug = true,
   sources = sources,
 }
+

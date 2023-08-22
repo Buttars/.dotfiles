@@ -4,6 +4,12 @@ local M = {}
 M.general = {
   n = {
     -- Spectre
+    ["<leader>gs"] = {
+      function()
+        require("spectre").open()
+      end,
+      "Global search",
+    },
     ["<leader>ss"] = {
       function()
         require("spectre").open()
@@ -38,18 +44,12 @@ M.general = {
     ["_"] = { ":vertical resize -5 <CR>", opts = { noremap = true } },
 
     ["<leader>."] = { "<cmd> CodeActionMenu<CR>", "open code action menu" },
-    ["<leader>td"] = {
+    ["<leader>cs"] = {
       function()
-        if vim.g.diagnostics_visible then
-          vim.g.diagnostics_visible = false
-          vim.diagnostic.disable()
-        else
-          vim.g.diagnostics_visible = true
-          vim.diagnostic.enable()
-        end
+        require("null-ls").toggle("cspell")
       end,
-      "toggle code diagnostics",
-    },
+      "toggle spell check",
+    }
   },
 
   c = {
