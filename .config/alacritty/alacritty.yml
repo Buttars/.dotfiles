@@ -21,6 +21,13 @@ colors:
     cyan: '#7bff67'
     white: '#EFEFEF'
 
+window:
+  decorations: buttonless
+  dynamic_padding: false
+  padding:
+    x: 14
+    y: 10
+
 font:
   # size: 8.75
   size: 11

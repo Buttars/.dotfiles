@@ -105,8 +105,12 @@ local plugins = {
   },
   {
     "jiangmiao/auto-pairs",
+    lazy = false,
+  },
+  {
+    "axieax/urlview.nvim",
     lazy = false
-  }
+  },
 }
 
 return plugins
