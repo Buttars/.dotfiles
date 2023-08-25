@@ -28,7 +28,6 @@ local sources = {
   b.formatting.eslint_d,
   b.diagnostics.eslint_d,
 
-
   b.diagnostics.cspell.with {
     extra_args = {
       "--config",
@@ -49,3 +48,4 @@ null_ls.setup {
   sources = sources,
 }
 
+null_ls.disable "cspell"
