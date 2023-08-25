@@ -57,6 +57,7 @@ export PATH="$PATH:${$(find ~/.local/bin -type d -printf %p:)%%:}"
 
 # Start graphical server on user's current tty if not already running.
 [ "$(tty)" = "/dev/tty1" ] && [ -x "$(command -v startx)" ] && ! pidof -s Xorg >/dev/null 2>&1 && exec startx "$XINITRC"
+[ "$(tty)" = "/dev/tty2" ] && [ -x "$(command -v Hyprland)" ] && ! pidof -s Hyprland >/dev/null 2>&1 && exec Hyprland
 
 # if [ "$TMUX" = "" ]; then tmux; fi
 # if [ -z "$TMUX" ]; then tmux attach -t TMUX || tmux new -s TMUX; fi
