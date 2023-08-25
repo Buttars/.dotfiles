@@ -7,22 +7,7 @@ end
 local b = null_ls.builtins
 
 local sources = {
-  b.formatting.prettierd.with {
-    -- filetypes = {
-    --   "javascript",
-    --   "typescript",
-    --   "css",
-    --   "scss",
-    --   "html",
-    --   "json",
-    --   "yaml",
-    --   "markdown",
-    --   "graphql",
-    --   "md",
-    --   "txt",
-    --   "code-snippets",
-    -- },
-  },
+  b.formatting.prettierd,
 
   b.code_actions.eslint_d,
   b.formatting.eslint_d,
