@@ -1,28 +1,33 @@
 colors:
+  # Default colors
   primary:
-    background: '#0E1116'
-    foreground: '#D9D7D6'
+    background: '0x0E1116'
+    foreground: '0xD9D7D6'
+
+  # Normal colors
   normal:
-    black: '#0E1116'
-    red: '#FF3377'
-    green: '#7bff67'
-    yellow: '#FFFF00'
-    blue: '#61D0FF'
-    magenta: '#61D0FF'
-    cyan: '#7bff67'
-    white: '#EDEBEA'
+    black:   '0x0E1116'
+    red:     '0xFF3377'
+    green:   '0x7bff67'
+    yellow:  '0xFFFF00'
+    blue:    '0x61D0FF'
+    magenta: '0x8EFBEE'
+    cyan:    '0x61D0FF'
+    white:   '0xD9D7D6'
+
+  # Bright colors
   bright:
-    black: '#0C171B'
-    red: '#FF3377'
-    green: '#7bff67'
-    yellow: '#FFFF00'
-    blue: '#61D0FF'
-    magenta: '#61D0FF'
-    cyan: '#7bff67'
-    white: '#EFEFEF'
+    black:   '0x0C171B'
+    red:     '0xF16269'
+    green:   '0x101B1F'
+    yellow:  '0xEFEFEF'
+    blue:    '0x192428'
+    magenta: '0x212C30'
+    cyan:    '0xE3E1E0'
+    white:   '0xEDEBEA'
 
 window:
-  decorations: buttonless
+  # decorations: buttonless
   dynamic_padding: false
   padding:
     x: 14

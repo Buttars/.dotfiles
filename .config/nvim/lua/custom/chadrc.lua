@@ -61,7 +61,7 @@ M.ui = {
         base0A = "#EFEFEF",
         base0B = "#7bff67",
         base0C = "#61D0FF",
-        baseOD = "#61D0FF",
+        base0D = "#61D0FF",
         base0E = "#8EFBEE",
         base0F = "#F16269",
       },

@@ -18,7 +18,8 @@ alias \
 	rsync="rsync -vrPlu" \
 	mkd="mkdir -pv" \
   ll="ls -la" \
-  dotfiles="git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
+  dotfiles="git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME" \
+  discord="discord -enable-features=UseOzonePlatform -ozone-platform=wayland"
 
 
 # Colorize commands 
@@ -36,4 +37,5 @@ alias \
 	sdn="shutdown -h now" \
 	e="$EDITOR" \
 	v="$EDITOR" \
-  f="fuck"
+  f="fuck" \
+  g="gorilla"

@@ -46,10 +46,15 @@ M.general = {
     ["<leader>."] = { "<cmd> CodeActionMenu<CR>", "open code action menu" },
     ["<leader>cs"] = {
       function()
-        require("null-ls").toggle("cspell")
+        require("null-ls").toggle "cspell"
       end,
       "toggle spell check",
-    }
+    },
+  },
+
+  v = {
+    ["K"] = { ":m '<-2<CR>gv=gv" },
+    ["<SHIFT><CR>"] = { "<C-e>" },
   },
 
   c = {
