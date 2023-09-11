@@ -12,13 +12,13 @@ if [ -f "/usr/local/bin/brew" ]; then
     BREW_BIN="/usr/local/bin/brew"
 fi
 
-if type "${BREW_BIN}" &> /dev/null; then
-    export BREW_PREFIX="$("${BREW_BIN}" --prefix)"
-    for bindir in "${BREW_PREFIX}/opt/"*"/libexec/gnubin"; do export PATH=$bindir:$PATH; done
-    for bindir in "${BREW_PREFIX}/opt/"*"/bin"; do export PATH=$bindir:$PATH; done
-    for mandir in "${BREW_PREFIX}/opt/"*"/libexec/gnuman"; do export MANPATH=$mandir:$MANPATH; done
-    for mandir in "${BREW_PREFIX}/opt/"*"/share/man/man1"; do export MANPATH=$mandir:$MANPATH; done
-fi
+# if type "${BREW_BIN}" &> /dev/null; then
+#     export BREW_PREFIX="$("${BREW_BIN}" --prefix)"
+#     for bindir in "${BREW_PREFIX}/opt/"*"/libexec/gnubin"; do export PATH=$bindir:$PATH; done
+#     for bindir in "${BREW_PREFIX}/opt/"*"/bin"; do export PATH=$bindir:$PATH; done
+#     for mandir in "${BREW_PREFIX}/opt/"*"/libexec/gnuman"; do export MANPATH=$mandir:$MANPATH; done
+#     for mandir in "${BREW_PREFIX}/opt/"*"/share/man/man1"; do export MANPATH=$mandir:$MANPATH; done
+# fi
 
 # Setup thefuck
 [ -x "$(command -v thefuck)" ] && eval $(thefuck --alias)
@@ -54,6 +54,8 @@ export PATH="$PATH:${$(find ~/.local/bin -type d -printf %p:)%%:}"
 
 # Angular Autocomplete
 [ -x "$(command -v ng)" ] && source <(ng completion script)
+
+[ -x "$(command -v zoxide)" ] && eval "$(zoxide init zsh)"
 
 # Start graphical server on user's current tty if not already running.
 [ "$(tty)" = "/dev/tty1" ] && [ -x "$(command -v startx)" ] && ! pidof -s Xorg >/dev/null 2>&1 && exec startx "$XINITRC"

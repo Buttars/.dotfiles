@@ -43,8 +43,14 @@ M.ui = {
     },
     rxyhn = {
       base_30 = {
+        white = "#EFEFEF",
         darker_black = "#020409",
         black = "#0E1116",
+        black2 = "#0C171B",
+        red = "#FF3377",
+        blue = "#61D0FF",
+        yellow = "#FFFF00",
+        cyan = "#8EFBEE",
         statusline_bg = "#0E1116",
       },
       base_16 = {
