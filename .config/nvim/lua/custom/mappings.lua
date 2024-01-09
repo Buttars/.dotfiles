@@ -3,13 +3,6 @@ local M = {}
 
 M.general = {
   n = {
-    -- Spectre
-    ["<leader>gs"] = {
-      function()
-        require("spectre").open()
-      end,
-      "Global search",
-    },
     ["<leader>ss"] = {
       function()
         require("spectre").open()
@@ -53,8 +46,8 @@ M.general = {
   },
 
   v = {
-    ["K"] = { ":m '<-2<CR>gv=gv" },
     ["<SHIFT><CR>"] = { "<C-e>" },
+    ["K"] = { ":m '<-2<CR>gv=gv" },
   },
 
   c = {
