@@ -25,6 +25,23 @@ vim.keymap.set('n', '<right>', '<cmd>echo "Use l to move!!"<CR>')
 vim.keymap.set('n', '<up>', '<cmd>echo "Use k to move!!"<CR>')
 vim.keymap.set('n', '<down>', '<cmd>echo "Use j to move!!"<CR>')
 
+-- Move screen 25% and center screen while moving up and down
+vim.keymap.set('n', '<C-u>', '25%<C-u>zz')
+vim.keymap.set('n', '<C-d>', '25%<C-d>zz')
+
+local function lineCountByPercentage(percentageAsInt)
+  local currentWindowHeight = vim.fn.winheight(0)
+  local percentage = percentageAsInt / 100
+  return math.floor(currentWindowHeight * percentage)
+end
+
+vim.keymap.set('n', '<C-u>', function()
+  vim.cmd('norm! ' .. tostring(lineCountByPercentage(25)) .. 'k')
+end)
+vim.keymap.set('n', '<C-d>', function()
+  vim.cmd('norm! ' .. tostring(lineCountByPercentage(25)) .. 'j')
+end)
+
 -- Keybinds to make split navigation easier.
 --  Use CTRL+<hjkl> to switch between windows
 --
