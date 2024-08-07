@@ -10,6 +10,7 @@ return {
     'MunifTanjim/nui.nvim',
   },
   cmd = 'Neotree',
+  ft = 'netrw',
   keys = {
     { '\\', ':Neotree reveal<CR>', { desc = 'NeoTree reveal' } },
   },
@@ -28,6 +29,16 @@ return {
         'filesystem',
         'netman.ui.neo-tree',
       },
+
+      filesystem = {
+        hijack_netrw_behavior = 'open_current',
+      },
     }
+
+    if vim.bo.filetype == 'netrw' and vim.b.netrw_method == nil then
+      vim.defer_fn(function()
+        vim.cmd('enew | Neotree current dir=' .. vim.b.netrw_curdir)
+      end, 0)
+    end
   end,
 }
