@@ -34,6 +34,8 @@ bindkey -M menuselect 'k' vi-up-line-or-history
 bindkey -M menuselect 'l' vi-forward-char
 bindkey -M menuselect 'j' vi-down-line-or-history
 bindkey -v '^?' backward-delete-char
+# Enable history search using CTRL+R with vim keybinds
+bindkey "^R" history-incremental-search-backward
 
 # Change cursor shape for different vi modes.
 function zle-keymap-select () {
