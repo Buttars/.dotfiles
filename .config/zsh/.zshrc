@@ -94,6 +94,9 @@ zle -N sesh-sessions
 bindkey -M vicmd '\es' sesh-sessions
 bindkey -M viins '\es' sesh-sessions
 
+# Initialize zoxide
+eval "$(zoxide init zsh)"
+
 # NOTE: Temoporary to try and fix Mason and LSP on Nixos
 export NIX_LD=$(nix eval --impure --raw --expr 'let pkgs = import <nixpkgs> {}; NIX_LD = pkgs.lib.fileContents "${pkgs.stdenv.cc}/nix-support/dynamic-linker"; in NIX_LD')
 
