@@ -161,13 +161,13 @@ return {
         clangd = {},
         cssls = {},
         denols = {},
+        gopls = {},
         html = {},
         nil_ls = {},
         tsserver = {},
         yamlls = {},
 
         -- clangd = {},
-        -- gopls = {},
         -- pyright = {},
         -- rust_analyzer = {},
         -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
@@ -212,6 +212,7 @@ return {
         'clangd',
         'cssls',
         'denols',
+        'gopls',
         'html',
         'nil_ls',
         'nixpkgs-fmt', -- Nix formatter
