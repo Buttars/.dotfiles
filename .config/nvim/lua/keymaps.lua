@@ -68,6 +68,6 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 })
 
 -- ZenMode
-vim.keymap.set('n', '<leader>z', ':ZenMode<CR>', { noremap = true, silent = true })
+vim.keymap.set('n', '<leader>zz', ':ZenMode<CR>', { noremap = true, silent = true })
 
 -- vim: ts=2 sts=2 sw=2 et
