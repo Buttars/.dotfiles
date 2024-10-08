@@ -13,7 +13,7 @@ return {
 
         map('n', '<leader>rh', gs.reset_hunk, opts '[R]eset [H]unk')
         map('n', '<leader>ph', gs.preview_hunk, opts '[P]review [H]unk')
-        map('n', '<leader>gb', gs.blame_line, opts '[B]lame Line')
+        map('n', '<leader>gb', gs.blame_line, opts '[G]it [B]lame Line')
       end,
     }
   end,

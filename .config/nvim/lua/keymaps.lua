@@ -48,10 +48,9 @@ vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower win
 vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
 
 -- Buffer mappings
-vim.keymap.set('n', 'gn', ':bnext<CR>', { desc = 'Go to next buffer' })
-vim.keymap.set('n', 'gp', ':bprevious<CR>', { desc = 'Go to previous buffer' })
-vim.keymap.set('n', 'gd', ':bdelete<CR>', { desc = 'Delete buffer' })
-vim.keymap.set('n', 'gn', ':bnext<CR>', { desc = 'Go to next buffer' })
+vim.keymap.set('n', '<leader>gn', ':bnext<CR>', { desc = 'Go to next buffer' })
+vim.keymap.set('n', '<leader>gp', ':bprevious<CR>', { desc = 'Go to previous buffer' })
+vim.keymap.set('n', '<leader>gd', ':bdelete<CR>', { desc = 'Delete buffer' })
 
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
