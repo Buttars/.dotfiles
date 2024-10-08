@@ -94,6 +94,9 @@ zle -N sesh-sessions
 bindkey -M vicmd '\es' sesh-sessions
 bindkey -M viins '\es' sesh-sessions
 
+# Start sesh on every new terminal. Force me to either create a new tmux session or use an existing one.
+sesh-sessions
+
 # Initialize zoxide
 eval "$(zoxide init zsh)"
 
