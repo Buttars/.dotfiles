@@ -29,15 +29,15 @@ TERM = "xterm-256color"
 size = 11
 
 [font.bold]
-family = "SauceCodePro Nerd Font"
+family = "CommitMono Nerd Font Mono"
 style = "Bold"
 
 [font.italic]
-family = "SauceCodePro Nerd Font"
+family = "CommitMono Nerd Font Mono"
 style = "Bold Italic"
 
 [font.normal]
-family = "SauceCodePro Nerd Font"
+family = "CommitMono Nerd Font Mono"
 style = "Bold"
 
 [[keyboard.bindings]]
