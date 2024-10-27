@@ -19,7 +19,7 @@ white = "0xD9D7D6"  # Terminal text color
 yellow = "0xFFFF00"  # Unchanged
 
 [colors.primary]
-background = "0x0C141D"  # Terminal background color
+background = "0x0D1117"  # Terminal background color
 foreground = "0xD9D7D6"  # Terminal text color
 
 [env]
