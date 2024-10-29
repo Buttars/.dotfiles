@@ -6,7 +6,7 @@ return {
     require('cyberdream').setup {
       theme = {
         colors = {
-          bg = '#0d1117',
+          bg = '#0F0F11',
         },
       },
     }
