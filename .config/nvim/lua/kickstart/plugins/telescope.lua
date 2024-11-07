@@ -66,12 +66,16 @@ return {
           ['ui-select'] = {
             require('telescope.themes').get_dropdown(),
           },
+          ['git-worktree'] = {
+            require('telescope').load_extension 'git_worktree',
+          },
         },
       }
 
       -- Enable Telescope extensions if they are installed
       pcall(require('telescope').load_extension, 'fzf')
       pcall(require('telescope').load_extension, 'ui-select')
+      pcall(require('telescope').load_extension, 'git_worktree')
 
       -- See `:help telescope.builtin`
       local builtin = require 'telescope.builtin'
@@ -93,6 +97,10 @@ return {
       vim.keymap.set('n', '<leader><leader>', builtin.buffers, { desc = '[ ] Find existing buffers' })
       vim.keymap.set('n', '<leader>sc', '<cmd>Telescope git_commits<CR>', { desc = '[S]earch [C]ommits' })
       vim.keymap.set('n', '<leader>gt', '<cmd>Telescope git_status<CR>', { desc = '[G]it status' })
+      vim.keymap.set('n', '<leader>gw', '<cmd>Telescope git_worktree<CR>', { desc = '[G]it [W]orktree' })
+      vim.keymap.set('n', '<leader>ga', function()
+        require('telescope').extensions.git_worktree.create_git_worktree()
+      end, { desc = '[G]it [Add] Worktree' })
 
       -- Slightly advanced example of overriding default behavior and theme
       vim.keymap.set('n', '<leader>/', function()
