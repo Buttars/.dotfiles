@@ -52,6 +52,9 @@ vim.keymap.set('n', '<leader>gn', ':bnext<CR>', { desc = 'Go to next buffer' })
 vim.keymap.set('n', '<leader>gp', ':bprevious<CR>', { desc = 'Go to previous buffer' })
 vim.keymap.set('n', '<leader>gd', ':bdelete<CR>', { desc = 'Delete buffer' })
 
+-- Toggle Spellcheck
+vim.keymap.set('n', '<leader>tz', ':setlocal spell!<CR>', { desc = 'Toggle Spellcheck' })
+
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
 
