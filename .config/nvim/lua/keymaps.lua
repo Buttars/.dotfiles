@@ -47,10 +47,22 @@ vim.keymap.set('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right win
 vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
 vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
 
+local function close_or_switch_buffer()
+  local buffers = vim.fn.getbufinfo { buflisted = true }
+  if #buffers > 1 then
+    local current_buf = vim.api.nvim_get_current_buf()
+    vim.cmd 'bnext'
+    vim.cmd('bdelete ' .. current_buf)
+  else
+    vim.cmd 'bdelete'
+  end
+end
+
 -- Buffer mappings
 vim.keymap.set('n', '<leader>gn', ':bnext<CR>', { desc = 'Go to next buffer' })
 vim.keymap.set('n', '<leader>gp', ':bprevious<CR>', { desc = 'Go to previous buffer' })
 vim.keymap.set('n', '<leader>gd', ':bdelete<CR>', { desc = 'Delete buffer' })
+vim.keymap.set('n', '<Leader>q', close_or_switch_buffer, { noremap = true, silent = true })
 
 -- Toggle Spellcheck
 vim.keymap.set('n', '<leader>tz', ':setlocal spell!<CR>', { desc = 'Toggle Spellcheck' })
