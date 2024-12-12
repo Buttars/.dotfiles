@@ -101,6 +101,9 @@ return {
       vim.keymap.set('n', '<leader>ga', function()
         require('telescope').extensions.git_worktree.create_git_worktree()
       end, { desc = '[G]it [Add] Worktree' })
+      vim.keymap.set('n', '<leader>gh', function()
+        builtin.git_bcommits()
+      end, { desc = '[G]it [B]uffer Commits' })
 
       -- Slightly advanced example of overriding default behavior and theme
       vim.keymap.set('n', '<leader>/', function()
