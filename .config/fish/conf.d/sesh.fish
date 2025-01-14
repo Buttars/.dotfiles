@@ -8,7 +8,7 @@ end
 bind \es sesh-sessions
 
 function sesh-start
-    set -l session (sesh connect (sesh list -i | fzf-tmux -p 55%,60% --layout=reverse --ansi \
+    set -l sesion (sesh connect (sesh list -i | fzf-tmux -p 55%,60% --layout=reverse --ansi \
         --no-sort --border-label ' sesh ' --prompt '⚡  ' \
         --header '  ^a all ^t tmux ^g configs ^x zoxide ^d tmux kill ^f find' \
         --bind 'tab:down,btab:up' \
@@ -26,6 +26,8 @@ end
 
 # Automatically start sesh if not in tmux
 if not set -q TMUX
-    sesh-start
+    if not status --is-login
+        sesh-start
+    end
 end
 
