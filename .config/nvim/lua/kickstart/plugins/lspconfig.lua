@@ -163,7 +163,6 @@ return {
         denols = {},
         gopls = {},
         html = {},
-        nil_ls = {},
         ts_ls = {},
         yamlls = {},
 
