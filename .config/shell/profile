@@ -11,8 +11,7 @@ export PATH=$HOME/.config/tmux/plugins/t-smart-tmux-session-manager/bin:$PATH
 
 # Default programs:
 export EDITOR="nvim"
-# export TERMINAL="st"
-# export TERMINAL_PROG="st"
+export TERMINAL="kitty"
 export BROWSER="brave"
 
 # Home directory clean up
