@@ -1,4 +1,4 @@
 
-set -Ux EDITOR "nvim"
-set -Ux TERMINAL "kitty"
-set -Ux BROWSER "brave"
+set -gx EDITOR "nvim"
+set -gx TERMINAL "kitty"
+set -gx BROWSER "brave"
