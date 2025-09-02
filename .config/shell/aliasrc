@@ -22,9 +22,16 @@ alias \
   discord="discord -enable-features=UseOzonePlatform -ozone-platform=wayland"
 
 
+if [ "$(uname)" = "Darwin" ]; then
+  # macOS (BSD-style ls)
+  alias ls='ls -hG'
+else
+  # Likely GNU/Linux
+  alias ls='ls -hN --color=auto --group-directories-first'
+fi
+
 # Colorize commands 
 alias \
-  ls="ls -hN --color=auto --group-directories-first" \
   grep="grep --color=auto" \
   diff="diff --color=auto" \
   ccat="highlight --out-format=ansi" \
